@@ -14,3 +14,10 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
+
+VOLUME ["/cachedir"]
+
+EXPOSE 8000
+
+LABEL SERVICE_NAME="own_django"
+LABEL SERVICE_TAGS="django"
