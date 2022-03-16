@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ theme_object.name }}</h1>
+    <ul>
+        {% for theme in theme_objects %}
+            <li> {{ theme.name }} </li>
+        {% endfor %}
+    </ul>
+    <ul>
+        <li> {{ theme_object.theory }} </li>
+        <li> {{ theme_object.video }} </li>
+        <li> {{ theme_object.matches }} </li>
+        <li> {{ theme_object.missing_word }} </li>
+        <li> {{ theme_object.right_order }} </li>
+        <li> {{ theme_object.right_answer }} </li>
+        
+    </ul>
+</body>
+</html>

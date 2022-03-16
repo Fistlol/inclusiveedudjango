@@ -1,0 +1,103 @@
+{% extends "themes/wrapper.html" %}
+{%load static%}
+{% block content %}
+<div class="container__content__theme row mt-2">
+    <h4 class="container__content__theme__name">{{ theme_object.name }}</h4>
+</div>
+<div class="container__content__main row">
+    <div class="container__content__main__left col-md-3">
+        <div class="container__content__main__left__theme">
+            Тема
+        </div>
+        <div class="container__content__main__left__lessons">
+            <ul class="container__content__main__left__lessons__ul">
+                {% for theme in theme_objects %}
+                    <li class="container__content__main__left__lessons__ul__li">
+                        <a class="container__content__main__left__lessons__ul__li_ref" href="{% url 'themes:theme' theme.pk %}">{{ theme.name }}</a> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="container__content__main__center col-md-3">
+        <div class="container__content__main__center__buttons">
+            <button id="theory" class="container__content__main__center__buttons__button text-center">
+                <img class="container__content__main__center__buttons__button__img"
+                    src="{% static 'themes/icons/avatar.svg' %}" alt="photo">
+                Теория
+            </button>
+            <button id="video" class="container__content__main__center__buttons__button text-center">
+                <img class="container__content__main__center__buttons__button__img"
+                    src="{% static 'themes/icons/avatar.svg' %}" alt="photo">
+                Видеообъяснение
+            </button>
+            <button id="matches" class="container__content__main__center__buttons__button text-center">
+                <img class="container__content__main__center__buttons__button__img"
+                    src="{% static 'themes/icons/avatar.svg' %}" alt="photo">
+                Установите соответствия
+            </button>
+            <button id="missing_word" class="container__content__main__center__buttons__button text-center">
+                <img class="container__content__main__center__buttons__button__img"
+                    src="{% static 'themes/icons/avatar.svg' %}" alt="photo">
+                Вставьте пропущенное слово
+            </button>
+            <button id="right_order" class="container__content__main__center__buttons__button text-center">
+                <img class="container__content__main__center__buttons__button__img"
+                    src="{% static 'themes/icons/avatar.svg' %}" alt="photo">
+                Расположите в правильном порядке
+            </button>
+            <button id="right_answer" class="container__content__main__center__buttons__button text-center">
+                <img class="container__content__main__center__buttons__button__img"
+                    src="{% static 'themes/icons/avatar.svg' %}" alt="photo">
+                Выберите правильный ответ
+            </button>
+        </div>
+    </div>
+    <div class="container__content__main__right col-md-5">
+        <div class="container__content__main__right__option">
+            <span id="title" class="container__content__main__right__option__name">
+                <!-- {{ theme_object.name }} -->
+            </span>
+        </div>
+        <div id="content" class="container__content__main__right__interactive">
+            <!-- {{ theme_object.matches|safe }} -->
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var theory = document.getElementById('theory');
+    var video = document.getElementById('video');
+    var matches = document.getElementById('matches');
+    var missing_word = document.getElementById('missing_word');
+    var right_order = document.getElementById('right_order');
+    var right_answer = document.getElementById('right_answer');
+
+    var title = document.getElementById('title');
+    var content = document.getElementById('content');
+
+    theory.addEventListener('click', event => {
+        title.textContent = theory.textContent;
+        content.innerHTML = '{{ theme_object.theory|safe }}';
+    });
+    video.addEventListener('click', event => {
+        title.textContent = video.textContent;
+        content.innerHTML = '{{ theme_object.video|safe }}';
+    });
+    matches.addEventListener('click', event => {
+        title.textContent = matches.textContent;
+        content.innerHTML = '{{ theme_object.matches|safe }}';
+    });
+    missing_word.addEventListener('click', event => {
+        title.textContent = missing_word.textContent;
+        content.innerHTML = '{{ theme_object.missing_word|safe }}';
+    });
+    right_order.addEventListener('click', event => {
+        title.textContent = right_order.textContent;
+        content.innerHTML = '{{ theme_object.right_order|safe }}';
+    });
+    right_answer.addEventListener('click', event => {
+        title.textContent = right_answer.textContent;
+        content.innerHTML = '{{ theme_object.right_answer|safe }}';
+    });
+</script>
+{% endblock %}
