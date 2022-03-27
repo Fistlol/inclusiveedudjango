@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'themes/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'themes/css/main/style.css' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Inclusive Edu</title>
@@ -33,11 +33,11 @@
                     </a>
                 </div>
                 <div class="top__content__block">
-                    <input class="top__content__block__search">
                     <button class="top__content__block__profile" type="button" alt="avatar">
                         <img class="top__content__block__profile__avatar" src="https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png"
                             alt="avatar">
                     </button>
+                    <a class="top__content__block__logout" href="{% url 'logout' %}">Выйти</a>
                 </div>
             </div>
         </div>
