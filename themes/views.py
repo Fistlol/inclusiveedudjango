@@ -7,22 +7,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Theme
 
 
-@login_required(login_url='login')
-def index(request):
-    theme_objects = Theme.objects.all()
-    return render(request, 'themes/index.html', {'theme_objects': theme_objects})
-
-
-@login_required(login_url='login')
-def theme(request, pk):
-    theme_object = Theme.objects.get(pk=pk)
-    theme_objects = Theme.objects.all()
-    return render(request, 'themes/theme.html', {
-            'theme_object': theme_object,
-            'theme_objects': theme_objects,
-        })
-
-
 def login(request):
     if request.user.is_authenticated:
         return redirect('index')
@@ -45,3 +29,19 @@ def login(request):
 def logout(request):
     logout(request)
     return redirect('login')
+
+
+@login_required(login_url='login')
+def index(request):
+    theme_objects = Theme.objects.all()
+    return render(request, 'themes/index.html', {'theme_objects': theme_objects})
+
+
+@login_required(login_url='login')
+def theme(request, pk):
+    theme_object = Theme.objects.get(pk=pk)
+    theme_objects = Theme.objects.all()
+    return render(request, 'themes/theme.html', {
+            'theme_object': theme_object,
+            'theme_objects': theme_objects,
+        })
