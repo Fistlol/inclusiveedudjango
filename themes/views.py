@@ -29,7 +29,7 @@ def login(request):
 
 
 def logout(request):
-    logout(request)
+    django_logout(request)
     return redirect('login')
 
 
