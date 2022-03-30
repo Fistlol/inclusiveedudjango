@@ -23,12 +23,12 @@ def loginPage(request):
             else:
                 messages.info(request, 'Логин или пароль введен неверно')
 
-        return render(request, 'themes/login.html', {})
+        return render(request, 'login/', {})
 
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('login/')
 
 
 @login_required(login_url='login')
