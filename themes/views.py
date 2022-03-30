@@ -31,13 +31,13 @@ def logoutUser(request):
     return redirect('/login')
 
 
-@login_required(login_url='login')
+@login_required(login_url='/login')
 def index(request):
     theme_objects = Theme.objects.all()
     return render(request, 'themes/index.html', {'theme_objects': theme_objects})
 
 
-@login_required(login_url='login')
+@login_required(login_url='/login')
 def theme(request, pk):
     theme_object = Theme.objects.get(pk=pk)
     theme_objects = Theme.objects.all()
