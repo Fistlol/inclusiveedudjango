@@ -22,8 +22,9 @@ def loginPage(request):
                 return redirect('/')
             else:
                 messages.info(request, 'Логин или пароль введен неверно')
-
-        return render(request, 'themes/login.html', {})
+                
+        return redirect('/login')
+#         return render(request, 'themes/login.html', {})
 
 
 def logoutUser(request):
