@@ -9,7 +9,7 @@ from .models import Theme
 
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect('index') 
+        return redirect('/') 
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -19,7 +19,7 @@ def loginPage(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('index')
+                return redirect('/')
             else:
                 messages.info(request, 'Логин или пароль введен неверно')
 
