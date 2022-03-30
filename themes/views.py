@@ -9,7 +9,9 @@ from .models import Theme
 
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect('index')
+#         return redirect('index')
+        theme_objects = Theme.objects.all()
+        return render(request, 'themes/index.html', {'theme_objects': theme_objects})
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
