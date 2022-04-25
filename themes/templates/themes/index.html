@@ -10,7 +10,12 @@
       <ul class="container__content__main__left__lessons__ul">
         {% for theme in theme_objects %}
           <li class="container__content__main__left__lessons__ul__li">
-            <a href="{% url 'themes:theme' theme.pk %}">{{ theme.name }}</a> 
+            <a 
+              class="container__content__main__left__lessons__ul__li_ref"
+              href="{% url 'themes:theme' theme.pk %}"
+            >
+                {{ theme.name }}
+            </a> 
           </li>
         {% endfor %}
       </ul>
