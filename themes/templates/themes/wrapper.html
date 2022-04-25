@@ -14,31 +14,24 @@
 <body>
     <div class="main-wrapper" style="background-color: #D6D0F0;">
         <div class="top">
+            <a href="/" class="top__title">
+                <h2 class="top__title__h2">Inclusive Edu</h2>
+            </a>
             <div class="top__content">
-                <a href="/" class="top__content__title">
-                    <h2 class="top__content__title__h2">Inclusive Edu</h2>
-                </a>
                 <div class="top__content__nav">
-                    <a class="top__content__nav__reference">
+                    <a href="/" class="top__content__nav__reference">
                         Главная
                     </a>
-                    <a class="top__content__nav__reference">
+                    <a href="/" class="top__content__nav__reference">
                         О нас
                     </a>
-                    <a class="top__content__nav__reference">
-                        Контакты
-                    </a>
-                    <a class="top__content__nav__reference">
+                    <a href="/" class="top__content__nav__reference">
                         Глоссарий
                     </a>
                 </div>
-                <div class="top__content__block">
-                    <button class="top__content__block__profile" type="button" alt="avatar" >
-                        <img class="top__content__block__profile__avatar" src="https://www.adazing.com/wp-content/uploads/2019/02/open-book-clipart-03.png"
-                            alt="avatar">
-                    </button>
-                    <a class="top__content__block__logout" href="{% url 'themes:logout' %}">Выйти</a>
-                </div>
+            </div>
+            <div class="top__block">
+                <a class="top__block__logout" href="{% url 'themes:logout' %}">Выйти</a>
             </div>
         </div>
         <div class="mt-3 container-fluid h-100">
