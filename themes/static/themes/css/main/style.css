@@ -149,6 +149,7 @@ body {
 
 hr {
   margin: 0!important;
+  border-top: 3px solid rgba(255,240,0);
 }
 
 .container__content__main__left__lessons__ul__li {
