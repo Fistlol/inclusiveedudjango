@@ -149,12 +149,11 @@ body {
 
 .container__content__main__left__lessons__ul__li {
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 .container__content__main__left__lessons__ul__li_ref {
   color: #000;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .container__content__main__left__lessons__ul__li_ref:hover {
